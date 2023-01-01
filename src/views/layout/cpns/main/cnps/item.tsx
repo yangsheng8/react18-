@@ -3,10 +3,13 @@ import type { FC, ReactNode } from 'react'
 import Button from '@/libs/button'
 interface IProps {
   children?: ReactNode
-  id: number
+  avatar: string
+  photo: string
+  title: string
+  author: string
 }
 
-const Item: FC<IProps> = ({ id }) => {
+const Item: FC<IProps> = ({ photo, avatar, title, author }) => {
   function handleShare() {
     console.log('分享')
   }
@@ -22,11 +25,7 @@ const Item: FC<IProps> = ({ id }) => {
   return (
     <div className="bg-white dark:bg-zinc-900 xl:dark:bg-zinc-800 rounded pb-1">
       <div className="relative w-full rounded cursor-zoom-in group">
-        <img
-          className="w-full rounded bg-transparent"
-          src={`https://robohash.org/${id}`}
-          alt=""
-        />
+        <img className="w-full rounded bg-transparent" src={photo} alt="" />
         {/*遮罩层*/}
         <div className="hidden opacity-0 w-full h-full bg-zinc-900/50 absolute top-0 left-0 rounded duration-300 group-hover:opacity-100 xl:block">
           {/*分享*/}
@@ -67,14 +66,11 @@ const Item: FC<IProps> = ({ id }) => {
         </div>
       </div>
       <p className="text-sm mt-1 font-bold text-zinc-900 dark:text-zinc-300 line-clamp-2 px-1">
-        这是一个图片的标题
+        {title}
       </p>
       <div className="flex items-center mt-1 px-1">
-        <img
-          className="h-2 w-2 rounded-full"
-          src="https://images.pexels.com/users/avatars/61083217/ugurcan-ozmen-235.jpeg?auto=compress&amp;fit=crop&amp;h=60&amp;w=60"
-        />
-        <span className="text-sm text-zinc-500 ml-1">Moriah.Stanton</span>
+        <img className="h-2 w-2 rounded-full" src={avatar} />
+        <span className="text-sm text-zinc-500 ml-1">{author}</span>
       </div>
     </div>
   )
