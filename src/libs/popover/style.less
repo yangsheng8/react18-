@@ -1,0 +1,23 @@
+.slide-enter,
+.slide-appear {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-appear-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.slide-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-exit-active {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}

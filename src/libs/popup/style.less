@@ -1,0 +1,43 @@
+.mask-enter,
+.mask-appear {
+  opacity: 0;
+}
+
+.mask-enter-active,
+.mask-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.mask-exit {
+  opacity: 1;
+}
+
+.mask-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.content-enter,
+.content-appear {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.content-enter-active,
+.content-appear-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+.content-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.content-exit-active {
+  transform: translateY(200px);
+  opacity: 0;
+  transition: all 1s ease;
+}
